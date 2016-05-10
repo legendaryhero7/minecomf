@@ -42,11 +42,12 @@ unzip ngrok.zip -d $BUILD_DIR/bin > /dev/null 2>&1
 echo "done"
 
 mincraft_version=${MINECRAFT_VERSION:-"1.8.3"}
-minecraft_url="https://s3-us-west-2.amazonaws.com/minecraft-sex-bucket/forge_server"
+minecraft_url="https://s3-us-west-2.amazonaws.com/minecraft-sex-bucket/forge_server.zip"
 
 echo -n "-----> Installing Minecraft ${mincraft_version}... "
-wget --no-parent --output-document="forge_server" -r $minecraft_url
-mv forge_server $BUILD_DIR
+curl -o forge_server.zip -s -L $minecraft_url
+unzip forge_server.zip
+mv forge_server/* $BUILD_DIR
 mv $BUILD_DIR/forge-1.7.10-10.13.4.1614-1.7.10-universal.jar $BUILD_DIR/minecraft.jar
 echo "done"
 
