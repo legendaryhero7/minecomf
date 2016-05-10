@@ -38,6 +38,7 @@ done
 
 echo -n "-----> Installing ngrok... "
 curl --silent -o ngrok.zip -L "https://dl.ngrok.com/ngrok_2.0.17_linux_amd64.zip" | indent
+echo "download complete; starting unzip"
 unzip ngrok.zip -d $BUILD_DIR/bin > /dev/null 2>&1
 echo "done"
 

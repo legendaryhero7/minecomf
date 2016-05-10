@@ -26,6 +26,7 @@ touch whitelist.json
 touch banned-players.json
 touch banned-ips.json
 touch ops.json
+cat /app/server.properties
 
 limit=$(ulimit -u)
 case $limit in
